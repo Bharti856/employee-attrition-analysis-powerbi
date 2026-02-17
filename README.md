@@ -93,7 +93,7 @@ Based on analysis:
 
 (Add your dashboard screenshot below)
 
-![Dashboard Preview](dashboard_screenshot1.png)
+![Dashboard Preview](dashboard_screenshot1.jpeg)
 
 ## 📷 Dashboard Preview
 
