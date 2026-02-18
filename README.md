@@ -17,7 +17,7 @@ To design an interactive Power BI dashboard that:
 
 ## 📁 Dataset Overview
 
-The dataset contains employee-level HR information, including:
+The dataset contains **1,470 employee records** across multiple departments and job roles.
 
 - Employee ID
 - Age & Gender
@@ -41,11 +41,12 @@ The data was cleaned and modeled in Power BI for analytical reporting.
 
 ## 📈 Key Insights Derived
 
-- Overall attrition rate observed: 14% of total employees.
-- Sales department recorded the highest turnover compared to other departments.
-- Employees with Work-Life Balance rating below 3 showed significantly higher attrition.
-- Majority of employees leaving had tenure between 0–3 years.
-- Lower salary bands experienced more frequent turnover.
+- Overall attrition rate observed: **14%** of total employees.
+- Sales department recorded the highest turnover compared to the company average.
+- Employees with a Work-Life Balance rating below 3 showed significantly higher attrition.
+- Majority of employees leaving had tenure between **0–3 years**, indicating higher early-stage risk.
+- Lower salary bands experienced more frequent turnover compared to higher salary groups.
+- Attrition trends indicate that early-career employees are at higher risk, highlighting the need for structured onboarding and engagement strategies.
 
 ## 💡 Business Recommendations
 
@@ -73,26 +74,37 @@ Based on analysis:
 - Data Cleaning & Transformation
 - HR Analytics Concepts
 
-## 🧠 DAX Measures Used 
+## 🧠 DAX Measures Used
 
-* Attrition Rate % =
+### Attrition Rate %
+
+```DAX
+Attrition Rate % =
 DIVIDE(
     COUNTROWS(FILTER(Employee, Employee[Attrition] = "Yes")),
     COUNTROWS(Employee)
 )
 
-* Total Employees = COUNT('employee_attrition'[employee_id])
+Total Employees = COUNT('employee_attrition'[employee_id])
 
-* Attrition Count =
+Attrition Count =
 CALCULATE(
     COUNT('employee_attrition'[employee_id]),
     'employee_attrition'[attrition] = "Yes"
 )
 
-* Avg Monthly Salary = AVERAGE('employee_attrition'[monthly_salary])
+Avg Monthly Salary = AVERAGE('employee_attrition'[monthly_salary])
 
-* Avg Performance Score = AVERAGE('employee_attrition'[performance_score])
+Avg Performance Score = AVERAGE('employee_attrition'[performance_score])
 
+## 📊 Business Impact
+
+This dashboard enables HR teams to:
+
+- Identify high-risk departments quickly.
+- Monitor attrition trends proactively.
+- Analyze compensation impact on retention.
+- Design targeted engagement strategies for early-tenure employees.
 
 ## 📷 Dashboard Preview
 
