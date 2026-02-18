@@ -97,6 +97,8 @@ Avg Monthly Salary = AVERAGE('employee_attrition'[monthly_salary])
 
 Avg Performance Score = AVERAGE('employee_attrition'[performance_score])
 
+```
+
 ## 📊 Business Impact
 
 This dashboard enables HR teams to:
