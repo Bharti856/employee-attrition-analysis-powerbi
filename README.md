@@ -6,8 +6,6 @@ Employee attrition is a major challenge for organizations as it directly impacts
 
 The objective of this project is to analyze HR data and identify key factors contributing to employee turnover using data-driven insights.
 
----
-
 ## 🎯 Project Objective
 
 To design an interactive Power BI dashboard that:
@@ -16,8 +14,6 @@ To design an interactive Power BI dashboard that:
 - Analyzes the relationship between salary, work-life balance, and employee turnover
 - Examines performance trends and tenure impact
 - Provides actionable business insights to improve retention
-
----
 
 ## 📁 Dataset Overview
 
@@ -34,8 +30,6 @@ The dataset contains employee-level HR information, including:
 
 The data was cleaned and modeled in Power BI for analytical reporting.
 
----
-
 ## 📊 Dashboard Features
 
 ✔ Overall Attrition Rate KPI  
@@ -45,17 +39,13 @@ The data was cleaned and modeled in Power BI for analytical reporting.
 ✔ Performance Rating Analysis  
 ✔ Interactive Slicers for Dynamic Filtering  
 
----
-
 ## 📈 Key Insights Derived
 
-- Certain departments show significantly higher attrition rates.
-- Employees with lower work-life balance ratings are more likely to leave.
-- Lower salary brackets show higher turnover trends.
-- Employees in early tenure stages (0–3 years) have higher attrition probability.
-- Performance rating patterns help identify stability segments.
-
----
+- Overall attrition rate observed: 14% of total employees.
+- Sales department recorded the highest turnover compared to other departments.
+- Employees with Work-Life Balance rating below 3 showed significantly higher attrition.
+- Majority of employees leaving had tenure between 0–3 years.
+- Lower salary bands experienced more frequent turnover.
 
 ## 💡 Business Recommendations
 
@@ -67,7 +57,13 @@ Based on analysis:
 - Implement retention strategies for critical job roles.
 - Monitor tenure-based attrition patterns proactively.
 
----
+## 🔄 Project Workflow
+
+1. Data Cleaning and Validation
+2. Data Modeling and Relationship Creation
+3. DAX Measure Development
+4. Dashboard Design & KPI Selection
+5. Insight Extraction and Business Recommendations
 
 ## 🛠 Tools & Technologies Used
 
@@ -77,30 +73,35 @@ Based on analysis:
 - Data Cleaning & Transformation
 - HR Analytics Concepts
 
----
+## 🧠 DAX Measures Used 
 
-## 🧠 DAX Measures Used (Examples)
+* Attrition Rate % =
+DIVIDE(
+    COUNTROWS(FILTER(Employee, Employee[Attrition] = "Yes")),
+    COUNTROWS(Employee)
+)
 
-- Attrition Rate %
-- Total Employees
-- Attrition Count
-- Average Salary
-- Department-wise Attrition %
+* Total Employees = COUNT('employee_attrition'[employee_id])
 
----
+Attrition Count =
+CALCULATE(
+    COUNT('employee_attrition'[employee_id]),
+    'employee_attrition'[attrition] = "Yes"
+)
+
+* Avg Monthly Salary = AVERAGE('employee_attrition'[monthly_salary])
+
+* Avg Performance Score = AVERAGE('employee_attrition'[performance_score])
+
 
 ## 📷 Dashboard Preview
 
-(Add your dashboard screenshot below)
+### Overview Dashboard
+![Overview Dashboard](dashboard_screenshot1.jpeg)
 
-![Dashboard Preview](dashboard_screenshot1.jpeg)
+### Department & Work-Life Balance Analysis
+![Department Analysis](dashboard_screenshot2.jpeg)
 
-## 📷 Dashboard Preview
-
-### 1️⃣ Overview Dashboard
-![Overview Dashboard](dashboard_screenshot2.jpeg)
-
----
 
 ## 🚀 How to Use
 
@@ -108,13 +109,9 @@ Based on analysis:
 2. Open using Microsoft Power BI Desktop.
 3. Interact with slicers and filters to explore insights.
 
----
-
 ## 📌 Project Type
 
 HR Analytics | Business Intelligence | Data Visualization
-
----
 
 ## 👨‍💻 Author
 
