@@ -83,7 +83,7 @@ DIVIDE(
 
 * Total Employees = COUNT('employee_attrition'[employee_id])
 
-Attrition Count =
+* Attrition Count =
 CALCULATE(
     COUNT('employee_attrition'[employee_id]),
     'employee_attrition'[attrition] = "Yes"
